@@ -11,8 +11,10 @@ export class AppComponent {
 
   @ViewChild('f') signupProperty: NgForm | null = null;
 
-  defaultQua='singer';
-  answer :string = ''
+  defaultQua = 'singer';
+  answer: string = '';
+
+  genders = ['male', 'female'];
 
   onSubmit() {
     console.log(this.signupProperty);
