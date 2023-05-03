@@ -8,8 +8,11 @@ import { NgForm } from '@angular/forms';
 })
 export class AppComponent {
   title = 'FormHandeling';
-  
+
   @ViewChild('f') signupProperty: NgForm | null = null;
+
+  defaultQua='singer';
+  answer :string = ''
 
   onSubmit() {
     console.log(this.signupProperty);

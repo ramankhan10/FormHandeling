@@ -24,16 +24,34 @@
               name="email"
               required
               email
+              #email="ngModel"
             />
+            <span
+              class="help-block text-danger"
+              *ngIf="!email.valid && email.touched"
+              >Please enter a valid email!</span
+            >
           </div>
         </div>
         <div class="form-group">
           <label for="secret">Secret Questions</label>
-          <select id="secret" class="form-control" ngModel name="secretqua">
-            <option value="pet">Your Favorite Singer?</option>
-            <option value="teacher">Your Favorite Actor?</option>
+          <select
+            id="secret"
+            class="form-control"
+            [ngModel]="defaultQua"
+            name="secretqua"
+          >
+            <option value="singer">Your Favorite Singer?</option>
+            <option value="actor">Your Favorite Actor?</option>
           </select>
         </div>
+
+        <div class="form-group mt-3">
+          <textarea class="form-control" name="quaAnswer" cols="30" rows="10" [(ngModel)]="answer"></textarea>
+        </div>
+
+        <p class="mt-2">Your Answer : {{answer}}</p>
+
         <button
           class="btn btn-primary mt-3"
           type="submit"
