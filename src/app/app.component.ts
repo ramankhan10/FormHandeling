@@ -9,7 +9,7 @@ import { NgForm } from '@angular/forms';
 export class AppComponent {
   title = 'FormHandeling';
 
-  @ViewChild('f') signupProperty: NgForm | null = null;
+  @ViewChild('f') signupForm: NgForm | null = null;
 
   defaultQua = 'singer';
   answer: string = '';
@@ -17,6 +17,27 @@ export class AppComponent {
   genders = ['male', 'female'];
 
   onSubmit() {
-    console.log(this.signupProperty);
+    console.log(this.signupForm);
+  }
+
+  setValues() {
+    this.signupForm?.setValue({
+      gender: 'male',
+      secretqua: 'singer',
+      quaAnswer: 'Yas',
+
+      userInfo: {
+        username: 'raman',
+        email: 'khanahmadi.raman@gmail.com',
+      },
+    });
+  }
+
+  suggestValue() {
+    this.signupForm?.form.patchValue({
+      userInfo: {
+        username: 'sepehr',
+      },
+    });
   }
 }

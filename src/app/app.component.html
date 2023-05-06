@@ -14,6 +14,12 @@
               required
             />
           </div>
+
+          <hr>
+          <button (click)="suggestValue()" class="btn btn-primary mb-2">Suggest Value</button>
+
+
+
           <div class="form-group mb-3">
             <label for="email">E-Mail</label>
             <input
@@ -65,7 +71,13 @@
 
         <div class="radio" *ngFor="let gender of genders">
           <label for="">
-            <input type="radio" name="gender" required ngModel [value]="gender" />
+            <input
+              type="radio"
+              name="gender"
+              required
+              ngModel
+              [value]="gender"
+            />
             {{ gender }}
           </label>
         </div>
@@ -77,6 +89,8 @@
         >
           Submit
         </button>
+
+        <button (click)="setValues()" class="btn btn-primary mt-3 mx-3" type="button">Set Default Value</button>
       </form>
     </div>
   </div>
